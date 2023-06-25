@@ -1,18 +1,27 @@
 import React, { useState } from 'react';
 import connectToChatGPT from './connectionToChatGPT';
-import { View, Text, TouchableOpacity, TextInput, InputAccessoryView, StyleSheet, Dimensions, Button } from 'react-native';
+
+import { View, Text, TouchableOpacity,TouchableHighlight, TextInput, InputAccessoryView, StyleSheet, Dimensions, Button } from 'react-native';
 const MyButton = () => {
+   
     const [text, setText] = useState('');
 
     return (
-        <InputAccessoryView nativeID="Rephrase">
+        <View nativeID="Rephrase">
             <View style={styles.accessory}>
-                <Button
-                    onPress={() => connectToChatGPT()}
-                    title="Rephrase"
-                />
+                
+                <TouchableHighlight onPress={() => {
+                    //    connectToChatGPT()
+                        console.log("ldksjajgač");
+                        postExample().then(function(data){
+                            console.log("ma rkaj")
+                        });
+                    }
+                }>
+          <Text >Stop Recognizing</Text>
+        </TouchableHighlight>
             </View>
-        </InputAccessoryView>
+        </View>
     );
 
 };
